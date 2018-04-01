@@ -26,7 +26,7 @@ export class NotificationsSystem extends Component {
   };
 
   state = {
-    windowWidth: window.innerWidth
+    windowWidth: window ? window.innerWidth : 1200
   };
 
   /**
@@ -34,6 +34,7 @@ export class NotificationsSystem extends Component {
    * @returns {void}
    */
   componentDidMount() {
+    this._updateWindowWidth();
     window.addEventListener('resize', this._updateWindowWidth);
   }
 
